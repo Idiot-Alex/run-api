@@ -1,0 +1,22 @@
+{
+  "name": "app",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "playwright": "^1.26.1",
+    "vue": "^3.2.37"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^3.1.0",
+    "unocss": "^0.45.26",
+    "unplugin-auto-import": "^0.11.2",
+    "unplugin-vue-components": "^0.22.7",
+    "vite": "^3.1.0"
+  }
+}
