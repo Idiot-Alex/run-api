@@ -1,11 +1,19 @@
 <script setup>
 import { ref } from 'vue'
+// import * as playwright from 'playwright'
+
 
 defineProps({
   msg: String
 })
 
 const count = ref(0)
+const url = ref('https://www.baidu.com')
+
+const run = async () => {
+
+  console.log(url.value)
+}
 </script>
 
 <template>
@@ -17,6 +25,8 @@ const count = ref(0)
       Edit
       <code>components/HelloWorld.vue</code> to test HMR
     </p>
+    <input type="text" name="url" v-model="url" />
+    <button type="button" @click="run">访问</button>
   </div>
 
   <p>
