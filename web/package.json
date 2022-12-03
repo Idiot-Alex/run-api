@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "playwright": "npx esno playwright.ts",
     "build": "vite build",
     "preview": "vite preview"
   },

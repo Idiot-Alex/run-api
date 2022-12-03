@@ -8,6 +8,10 @@
   </head>
   <body>
     <div id="app"></div>
+    <script>
+      window.process = { env: { NODE_ENV: 'dev' } }
+      console.log(process)
+    </script>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
