@@ -1,7 +1,6 @@
 package com.hotstrip.runapi;
 
 import com.hotstrip.runapi.config.PlaywrightServer;
-import com.microsoft.playwright.Playwright;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 

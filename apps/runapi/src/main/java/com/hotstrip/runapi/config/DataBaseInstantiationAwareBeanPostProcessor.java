@@ -18,7 +18,7 @@ import java.util.Objects;
 
 /**
  * @since 2022-12-03
- * @author hotstrip
+ * @author Hotstrip
  * init SQL file when DataSource is ready
  */
 @Slf4j

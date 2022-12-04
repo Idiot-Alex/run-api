@@ -1,17 +1,16 @@
 package com.hotstrip.runapi.config;
 
 import com.microsoft.playwright.*;
-
-import java.util.LinkedList;
-import java.util.List;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * Playwright server
  * @since 2022-12-04
- * @author hotstrip
+ * @author Hotstrip
  */
+@Slf4j
 public class PlaywrightServer {
-    private static Playwright playwright = Playwright.create();
+    private static final Playwright playwright = Playwright.create();
     private static Browser browser;
 
 
@@ -20,16 +19,19 @@ public class PlaywrightServer {
     }
 
     public static void startPlaywright() {
+        log.info("start Playwright...");
+
         BrowserType.LaunchOptions launchOptions = new BrowserType.LaunchOptions()
+                .setSlowMo(5000)
+                .setChannel("chrome")
                 .setHeadless(false);
         browser = playwright.chromium().launch(launchOptions);
 
-        BrowserContext context = browser.newContext();
-        Page page = context.newPage();
-        page.navigate("https://www.baidu.com");
+        log.info("start Playwright success...");
     }
 
     public static void closePlaywrightServer() {
+        log.info("close Playwright...");
         playwright.close();
     }
 
