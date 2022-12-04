@@ -15,6 +15,9 @@ public class PlaywrightServer {
 
 
     public static Browser getBrowser() {
+        if (null == browser) {
+            startPlaywright();
+        }
         return browser;
     }
 
