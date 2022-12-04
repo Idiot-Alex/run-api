@@ -2,7 +2,7 @@ import playwright, { devices } from 'playwright';
 
 (async () => {
   // Setup
-  const browser = await playwright.chromium.launch();
+  const browser = await playwright.chromium.launch({headless: false});
   const context = await browser.newContext(devices['iPhone 11']);
   const page = await context.newPage();
 

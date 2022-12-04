@@ -6,7 +6,6 @@ import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import AutoImport from 'unplugin-auto-import/vite'
 import pluginPlayWright from './src/plugins/rollup-plugin-playwright'
 
-console.log('-----'+ process)
 // https://vitejs.dev/config/
 export default defineConfig({
   define: { 
@@ -30,6 +29,6 @@ export default defineConfig({
         /\.md$/, // .md
       ],
     }),
-    // pluginPlayWright(),
+    pluginPlayWright(),
   ]
 })

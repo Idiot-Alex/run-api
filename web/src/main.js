@@ -3,15 +3,11 @@ import './style.css'
 import 'uno.css'
 import App from './App.vue'
 
-
-createApp(App).mount('#app')
-window.process = { env: { NODE_ENV: 'dev' } }
-console.log('process:', process)
 // const currentNodeVersion = process.versions.node;
 // // const semver = currentNodeVersion.split('.');
 // console.log(currentNodeVersion)
 
-import playwright from 'playwright'
+// import playwright from 'playwright'
 // (async () => {
 //   const browser = await playwright.chromium.launch({
 //     channel: 'msedge',
@@ -23,3 +19,6 @@ import playwright from 'playwright'
 
 //   await browser.close();
 // })();
+
+
+createApp(App).mount('#app')
