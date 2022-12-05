@@ -1,0 +1,30 @@
+{
+  "name": "run-api-client-js",
+  "version": "1.0.0",
+  "main": "lib/bundle.cjs.js",
+  "jsnext:main": "lib/bundle.esm.js",
+  "module": "lib/bundle.esm.js",
+  "browser": "lib/bundle.browser.js",
+  "types": "types/index.d.ts",
+  "author": {
+    "email": "18716910170zx@gmail.com",
+    "name": "hotstrip",
+    "url": "https://github.com/Idiot-Alex"
+  },
+  "description": "run api for client js",
+  "keywords": [
+    "run api",
+    "ajax-hook"
+  ],
+  "scripts": {
+    "dev": "npx rollup -wc rollup.config.dev.js",
+    "build": "npx rollup -c rollup.config.js && npm run build:types",
+    "build:types": "npx tsc"
+  },
+  "dependencies": {
+    "ajax-hook": "^2.1.3",
+    "rollup-plugin-serve": "^2.0.2"
+  },
+  "devDependencies": {},
+  "license": "MIT"
+}
