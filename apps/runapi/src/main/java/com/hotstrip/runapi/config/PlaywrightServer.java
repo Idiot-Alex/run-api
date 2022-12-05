@@ -1,6 +1,9 @@
 package com.hotstrip.runapi.config;
 
-import com.microsoft.playwright.*;
+import com.microsoft.playwright.Browser;
+import com.microsoft.playwright.BrowserContext;
+import com.microsoft.playwright.BrowserType;
+import com.microsoft.playwright.Playwright;
 import lombok.extern.slf4j.Slf4j;
 
 /**
@@ -14,17 +17,18 @@ public class PlaywrightServer {
     private static Browser browser;
 
 
-    public static Browser getBrowser() {
+    public static BrowserContext getBrowser() {
         if (null == browser) {
             startPlaywright();
         }
-        return browser;
+        return browser.newContext();
     }
 
     public static void startPlaywright() {
         log.info("start Playwright...");
 
         BrowserType.LaunchOptions launchOptions = new BrowserType.LaunchOptions()
+//                .setProxy(new Proxy("http://127.0.0.1:8080"))
                 .setSlowMo(5000)
                 .setChannel("chrome")
                 .setHeadless(false);
