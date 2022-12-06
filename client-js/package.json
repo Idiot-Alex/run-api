@@ -18,8 +18,6 @@
   ],
   "scripts": {
     "compile": "npx babel src/ --out-dir lib",
-    "dev": "npx rollup -wc rollup.config.dev.js",
-    "build": "npx rollup -c rollup.config.js && npm run build:types",
     "build:types": "npx tsc"
   },
   "dependencies": {
