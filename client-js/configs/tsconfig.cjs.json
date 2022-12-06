@@ -1,0 +1,18 @@
+/*
+lib 屬性向 TypeScript 指出它應該參考哪些類型。
+target 屬性向 TypeScript 指出要編譯的項目代碼的 JavaScript 版本。
+module 屬性向 TypeScript 指出在編譯的項目代碼時應該使用哪種 JavaScript 模塊格式。
+moduleResolution 屬性幫助 TypeScript 弄清 "import" 語句應該如何被提及。
+outDir 和 declarationDir 屬性向 TypeScript 指出了將編譯的代碼和定義其中使用的類型的結果放在哪裏。
+*/
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "lib": ["ES6", "DOM"],
+    "target": "ES6",
+    "module": "CommonJS",
+    "moduleResolution": "Node",
+    "outDir": "../lib/cjs",
+    "declarationDir": "../lib/cjs/types"
+  }
+}

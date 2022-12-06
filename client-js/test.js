@@ -1,3 +1,3 @@
-import { runapi } from "./index";
+import { runapi } from "./lib";
 
 runapi.init();

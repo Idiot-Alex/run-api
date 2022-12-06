@@ -1,0 +1,30 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const ajax_hook_1 = require("ajax-hook");
+const runapi = {
+    init: (server) => {
+        console.log("init......");
+        (0, ajax_hook_1.proxy)({
+            //请求发起前进入
+            onRequest: (config, handler) => {
+                console.log(config.url);
+                handler.next(config);
+            },
+            //请求发生错误时进入，比如超时；注意，不包括http状态码错误，如404仍然会认为请求成功
+            onError: (err, handler) => {
+                console.log(err.type);
+                handler.next(err);
+            },
+            //请求成功后进入
+            onResponse: (response, handler) => {
+                console.log(response.response);
+                handler.next(response);
+            }
+        });
+    },
+    destroy: () => {
+        console.log("destroy......");
+        (0, ajax_hook_1.unProxy)();
+    }
+};
+exports.default = runapi;
