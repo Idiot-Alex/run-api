@@ -1,8 +1,8 @@
 import { proxy, unProxy } from "ajax-hook";
 
 const runapi = {
-    init: (server: any) => {
-        console.log("init......")
+    init: (server) => {
+        console.log("init......server", server)
         proxy({
             //请求发起前进入
             onRequest: (config, handler) => {
