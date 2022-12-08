@@ -1,6 +1,7 @@
-
+import { getVersion } from "jest"
 describe('测试getResult函数', function() {
     test('正常入参', function() {
+        console.log(getVersion())
         expect(true)
     })
 })
