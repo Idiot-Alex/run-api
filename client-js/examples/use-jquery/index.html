@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>use-jquery</title>
+</head>
+<body>
+    <h1>Use Jquery test ajax-hook</h1>
+    <button onclick="test('https://aa/')">hi world aa</button>
+    <button onclick="test('https://bb/')">hi world bb</button>
+    <button onclick="test(location.href+'?')">location.href</button>
+    <button onclick="testJquery('https://aa/')">jquery: hi world aa</button>
+    <button onclick="testJquery('https://bb/')">jquery: hi world bb</button>
+    <button onclick="testJquery(location.href+'?')">jquery: location.href</button>
+</body>
+<script src="https://unpkg.com/ajax-hook@2.1.3/dist/ajaxhook.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+<script src="./index.js"></script>
+</html>
