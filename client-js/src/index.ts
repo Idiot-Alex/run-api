@@ -1,11 +1,21 @@
-import { proxy, unProxy } from "ajax-hook";
+import { proxy, unProxy, XhrRequestConfig, XhrRequestHandler} from "ajax-hook";
 
-const runapi = {
-    init: (server) => {
-        console.log("init......server", server)
+interface RunApi {
+    init(): void
+    destroy(): void
+}
+
+const runApi: RunApi = new class implements RunApi {
+    destroy(): void {
+        console.log("destroy......")
+        unProxy();
+    }
+
+    init(): void {
+        console.log("init......server")
         proxy({
             //请求发起前进入
-            onRequest: (config, handler) => {
+            onRequest: (config: XhrRequestConfig, handler: XhrRequestHandler) => {
                 console.log(config.url)
                 handler.next(config);
             },
@@ -20,11 +30,7 @@ const runapi = {
                 handler.next(response)
             }
         })
-    },
-    destroy: () => {
-        console.log("destroy......")
-        unProxy();
     }
 }
 
-export default runapi;
+export default runApi;

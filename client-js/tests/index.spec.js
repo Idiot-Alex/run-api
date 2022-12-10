@@ -1,7 +1,8 @@
-const ah = require("ajax-hook")
+import axios from "axios";
+// import { proxy } from "ajax-hook";
 
-describe('测试getResult函数', function() {
-    test('正常入参', function() {
+describe('测试函数', function() {
+    test('正常入参', async function() {
         // proxy({
         //     //请求发起前进入
         //     onRequest: (config, handler) => {
@@ -25,7 +26,11 @@ describe('测试getResult函数', function() {
 
 describe('sum function test', () => {
     // 这里 test 和 it 没有明显区别，it 是指: it should xxx, test 是指 test xxx
-    test('sum(1, 2) === 3', () => {
+    test('sum(1, 2) === 3', async () => {
+        await axios.get('https://bird.ioliu.cn/v1').then(res => {
+            console.log(JSON.stringify(res.data))
+        })
+
         expect(1+2).toBe(3);
     });
 })

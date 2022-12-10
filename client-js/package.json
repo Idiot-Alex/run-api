@@ -37,7 +37,8 @@
     }
   },
   "dependencies": {
-    "ajax-hook": "^2.1.3"
+    "ajax-hook": "^2.1.3",
+    "axios": "^1.2.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.19.3",
