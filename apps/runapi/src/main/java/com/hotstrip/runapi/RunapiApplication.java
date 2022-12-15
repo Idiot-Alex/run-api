@@ -8,7 +8,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 import javax.annotation.PreDestroy;
 
 @SpringBootApplication
-@EnableScheduling
+//@EnableScheduling
 public class RunapiApplication {
 
 	public static void main(String[] args) {
