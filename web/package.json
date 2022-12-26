@@ -5,11 +5,12 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "playwright": "npx esno playwright.ts",
     "build": "vite build",
     "preview": "vite preview"
   },
   "dependencies": {
-    "playwright": "^1.27.1",
+    "playwright": "^1.28.1",
     "vue": "^3.2.37"
   },
   "devDependencies": {
