@@ -12,13 +12,13 @@ import javax.annotation.PreDestroy;
 public class RunapiApplication {
 
 	public static void main(String[] args) {
-		PlaywrightServer.startPlaywright();
+//		PlaywrightServer.startPlaywright();
 		SpringApplication.run(RunapiApplication.class, args);
 	}
 
-	@PreDestroy
-	public void destroy() {
-		PlaywrightServer.closePlaywrightServer();
-	}
+//	@PreDestroy
+//	public void destroy() {
+//		PlaywrightServer.closePlaywrightServer();
+//	}
 
 }
