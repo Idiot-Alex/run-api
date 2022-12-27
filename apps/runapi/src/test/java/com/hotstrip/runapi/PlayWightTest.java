@@ -1,3 +1,4 @@
+/*
 package com.hotstrip.runapi;
 
 import com.microsoft.playwright.Browser;
@@ -69,3 +70,4 @@ public class PlayWightTest extends RunapiApplicationTests{
         assertTrue(page.title().contains("Playwright"));
     }
 }
+*/

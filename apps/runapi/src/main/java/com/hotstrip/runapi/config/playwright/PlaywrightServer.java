@@ -1,3 +1,4 @@
+/*
 package com.hotstrip.runapi.config;
 
 import com.microsoft.playwright.Browser;
@@ -6,11 +7,13 @@ import com.microsoft.playwright.BrowserType;
 import com.microsoft.playwright.Playwright;
 import lombok.extern.slf4j.Slf4j;
 
+*/
 /**
  * Playwright server
  * @since 2022-12-04
  * @author Hotstrip
- */
+ *//*
+
 @Slf4j
 public class PlaywrightServer {
     private static final Playwright playwright = Playwright.create();
@@ -43,3 +46,4 @@ public class PlaywrightServer {
     }
 
 }
+*/

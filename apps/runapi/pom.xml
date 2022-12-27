@@ -56,11 +56,11 @@
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
-		<dependency>
-			<groupId>org.seleniumhq.selenium</groupId>
-			<artifactId>selenium-java</artifactId>
-			<version>4.7.1</version>
-		</dependency>
+<!--		<dependency>-->
+<!--			<groupId>org.seleniumhq.selenium</groupId>-->
+<!--			<artifactId>selenium-java</artifactId>-->
+<!--			<version>4.7.1</version>-->
+<!--		</dependency>-->
 
 		<dependency>
 			<groupId>com.alibaba</groupId>
@@ -69,16 +69,11 @@
 		</dependency>
 
 		<!-- playwright	-->
-		<dependency>
-			<groupId>com.microsoft.playwright</groupId>
-			<artifactId>playwright</artifactId>
-			<version>1.28.0</version>
-		</dependency>
-		<dependency>
-			<groupId>io.netty</groupId>
-			<artifactId>netty-all</artifactId>
-			<version>4.1.58.Final</version>
-		</dependency>
+<!--		<dependency>-->
+<!--			<groupId>com.microsoft.playwright</groupId>-->
+<!--			<artifactId>playwright</artifactId>-->
+<!--			<version>1.28.0</version>-->
+<!--		</dependency>-->
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
