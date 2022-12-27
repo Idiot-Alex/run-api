@@ -1,5 +1,8 @@
 package com.hotstrip.runapi.controller;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONValidator;
+import com.hotstrip.runapi.domain.model.ApiModel;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.handler.annotation.SendTo;
@@ -16,8 +19,12 @@ public class StompMessageController {
 
     @MessageMapping("/upload")
     @SendTo("/topic/response")
-    public String greeting(String value) {
-        log.info("value: {}", value);
-        return value;
+    public void upload(String data) {
+        if (!JSONValidator.from(data).validate()) {
+            log.error("upload data is not a json format string...");
+            return;
+        }
+        ApiModel apiModel = JSON.parseObject(data, ApiModel.class);
+        log.info("data: {}", JSON.toJSONString(apiModel));
     }
 }
