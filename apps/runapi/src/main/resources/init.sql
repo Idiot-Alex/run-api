@@ -1,5 +1,5 @@
 
-create table if not exists `PUBLIC.api_list`(
+create table if not exists `PUBLIC.api_log`(
     `id` int not null primary key ,
     `url` varchar(255) not null,
     `method` varchar(10) null,
