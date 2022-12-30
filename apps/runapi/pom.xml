@@ -15,6 +15,7 @@
 	<description>run api project for Spring Boot</description>
 	<properties>
 		<java.version>8</java.version>
+		<mapstruct.version>1.5.3.Final</mapstruct.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -59,6 +60,19 @@
 			<groupId>com.alibaba</groupId>
 			<artifactId>fastjson</artifactId>
 			<version>1.2.83</version>
+		</dependency>
+
+		<!--MapStruct相关依赖-->
+		<dependency>
+			<groupId>org.mapstruct</groupId>
+			<artifactId>mapstruct</artifactId>
+			<version>${mapstruct.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.mapstruct</groupId>
+			<artifactId>mapstruct-processor</artifactId>
+			<version>${mapstruct.version}</version>
+			<scope>compile</scope>
 		</dependency>
 
 		<dependency>

@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @Slf4j
 @RestController
+@Deprecated
 public class ClientJSController {
     @PostMapping(value = "/client-js/upload")
     public String upload(@RequestBody ApiModel apiModel) {
