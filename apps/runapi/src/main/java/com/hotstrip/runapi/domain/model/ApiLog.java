@@ -8,6 +8,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
+import java.util.Map;
 
 /**
  * api_log
@@ -24,7 +25,7 @@ public class ApiLog implements Serializable {
     private String method;
     private String code;
     private String msg;
-    private String headers;
+    private Map<String, String> headers;
     private String body;
     private String res;
 }
