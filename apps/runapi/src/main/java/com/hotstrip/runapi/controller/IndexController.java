@@ -27,19 +27,4 @@ public class IndexController {
         }
         return "hello world";
     }
-
-    /*@GetMapping(value = "/test")
-    @ResponseBody
-    public String test(@RequestParam String url) {
-        log.info("url: {}", url);
-        Objects.requireNonNull(url, "url cannot be null");
-        BrowserContext browserContext = PlaywrightServer.getBrowser();
-        Page page = browserContext.newPage();
-
-        page.onRequest(request -> log.info(">> " + request.method() + " " + request.url()));
-        page.onResponse(response -> log.info("<<" + response.status() + " " + response.url()));
-
-        page.navigate(url);
-        return page.title();
-    }*/
 }

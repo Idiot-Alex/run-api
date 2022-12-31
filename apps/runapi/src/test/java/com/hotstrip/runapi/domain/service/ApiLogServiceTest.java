@@ -2,6 +2,7 @@ package com.hotstrip.runapi.domain.service;
 
 import cn.hutool.core.util.IdUtil;
 import com.alibaba.fastjson.JSON;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.hotstrip.runapi.RunapiApplicationTests;
 import com.hotstrip.runapi.domain.model.ApiLog;
 import lombok.extern.slf4j.Slf4j;
@@ -50,5 +51,12 @@ class ApiLogServiceTest extends RunapiApplicationTests {
         ApiLog apiLog1 = apiLogService.getById(id);
         log.info("select apiLog: {} with id: {}", JSON.toJSONString(apiLog1), id);
         assertEquals(apiLog.getUrl(), apiLog1.getUrl());
+    }
+
+    @Test
+    public void listPage() {
+        Page<ApiLog> page = apiLogService.listPage(1, 10, new ApiLog());
+        log.info("page: {}", JSON.toJSONString(page));
+        assertTrue(page.getTotal() > 0);
     }
 }
