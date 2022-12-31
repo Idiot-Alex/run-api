@@ -1,10 +1,8 @@
 package com.hotstrip.runapi.controller;
 
 import com.alibaba.fastjson.JSON;
-import com.hotstrip.runapi.domain.model.ApiModel;
+import com.hotstrip.runapi.domain.model.vo.ApiModel;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.boot.json.JacksonJsonParser;
-import org.springframework.http.codec.json.Jackson2JsonDecoder;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;

@@ -4,6 +4,8 @@ import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -16,16 +18,18 @@ import java.util.Map;
  * @since 2022-12-29
  */
 @NoArgsConstructor
+@AllArgsConstructor
 @Data
-@TableName(schema = "public", value = "api_log")
+@Builder
+@TableName(schema = "PUBLIC", value = "api_log")
 public class ApiLog implements Serializable {
     @TableId(type = IdType.INPUT)
-    private Integer id;
+    private Long id;
     private String url;
     private String method;
     private String code;
     private String msg;
-    private Map<String, String> headers;
+    private String headers;
     private String body;
     private String res;
 }

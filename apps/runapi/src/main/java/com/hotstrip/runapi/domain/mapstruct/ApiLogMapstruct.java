@@ -1,7 +1,7 @@
 package com.hotstrip.runapi.domain.mapstruct;
 
 import com.hotstrip.runapi.domain.model.ApiLog;
-import com.hotstrip.runapi.domain.model.ApiModel;
+import com.hotstrip.runapi.domain.model.vo.ApiModel;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 
@@ -17,5 +17,5 @@ public interface ApiLogMapstruct {
     @Mapping(source = "config.url", target = "url")
     @Mapping(source = "config.method", target = "method")
     @Mapping(source = "config.body", target = "body")
-    ApiLog translate(ApiModel apiModel);
+    ApiLog toModel(ApiModel apiModel);
 }

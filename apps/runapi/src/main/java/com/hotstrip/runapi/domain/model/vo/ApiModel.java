@@ -1,4 +1,4 @@
-package com.hotstrip.runapi.domain.model;
+package com.hotstrip.runapi.domain.model.vo;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

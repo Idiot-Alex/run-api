@@ -1,4 +1,4 @@
-package com.hotstrip.runapi.domain.model;
+package com.hotstrip.runapi.domain.model.vo;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -13,7 +13,7 @@ import java.util.Map;
 @Data
 @Builder
 public class ApiConfigModel implements Serializable {
-    private Map<String, String> headers;
+    private String headers;
     private String method;
     private String url;
     private Boolean async;

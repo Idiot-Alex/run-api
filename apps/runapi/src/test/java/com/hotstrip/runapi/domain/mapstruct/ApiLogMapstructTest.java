@@ -2,9 +2,9 @@ package com.hotstrip.runapi.domain.mapstruct;
 
 import com.alibaba.fastjson.JSON;
 import com.hotstrip.runapi.RunapiApplicationTests;
-import com.hotstrip.runapi.domain.model.ApiConfigModel;
+import com.hotstrip.runapi.domain.model.vo.ApiConfigModel;
 import com.hotstrip.runapi.domain.model.ApiLog;
-import com.hotstrip.runapi.domain.model.ApiModel;
+import com.hotstrip.runapi.domain.model.vo.ApiModel;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 
@@ -25,7 +25,7 @@ class ApiLogMapstructTest extends RunapiApplicationTests {
     private ApiLogMapstruct apiLogMapstruct;
 
     @Test
-    void translate() {
+    void toModel() {
         HashMap<String, String> headers = new HashMap<>();
         headers.put("Content-Type", "application/json");
         ApiConfigModel apiConfigModel = ApiConfigModel.builder()
@@ -33,7 +33,7 @@ class ApiLogMapstructTest extends RunapiApplicationTests {
                 .url("https://www.baidu.com")
                 .method("get")
                 .body("body")
-                .headers(headers)
+                .headers(JSON.toJSONString(headers))
                 .build();
         ApiModel apiModel = ApiModel.builder()
                 .code("200")
@@ -41,7 +41,7 @@ class ApiLogMapstructTest extends RunapiApplicationTests {
                 .msg("success")
                 .config(apiConfigModel)
                 .build();
-        ApiLog apiLog = apiLogMapstruct.translate(apiModel);
+        ApiLog apiLog = apiLogMapstruct.toModel(apiModel);
         log.info("apiLog: {}", JSON.toJSONString(apiLog));
         assertEquals(apiLog.getCode(), apiModel.getCode());
     }

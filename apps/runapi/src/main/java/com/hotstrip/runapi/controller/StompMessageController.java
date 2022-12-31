@@ -2,7 +2,7 @@ package com.hotstrip.runapi.controller;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONValidator;
-import com.hotstrip.runapi.domain.model.ApiModel;
+import com.hotstrip.runapi.domain.model.vo.ApiModel;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.handler.annotation.SendTo;
