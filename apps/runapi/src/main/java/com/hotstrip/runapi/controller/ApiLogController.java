@@ -30,6 +30,6 @@ public class ApiLogController {
         log.info("/api-log/list...pageNo: {}, pageSize: {}", pageNo, pageSize);
         Page<ApiLog> page = apiLogService.listPage(pageNo, pageSize, info);
         log.info("res: {}", JSON.toJSONString(page));
-        return Res.okPageList(page);
+        return Res.okData(page);
     }
 }

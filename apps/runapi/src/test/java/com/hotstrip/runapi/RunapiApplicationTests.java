@@ -1,38 +1,40 @@
 package com.hotstrip.runapi;
 
+import com.alibaba.fastjson.JSON;
+import com.hotstrip.runapi.domain.model.Res;
 import lombok.extern.slf4j.Slf4j;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
-import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.web.client.TestRestTemplate;
-import org.springframework.boot.test.web.server.LocalServerPort;
-import org.springframework.test.context.junit.jupiter.SpringExtension;
+import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.setup.MockMvcBuilders;
+import org.springframework.web.context.WebApplicationContext;
 
 import javax.annotation.Resource;
 
 @Slf4j
 @SpringBootTest
-@AutoConfigureMockMvc
+@WebAppConfiguration
 public class RunapiApplicationTests {
 
-//	@LocalServerPort
-//	protected int port;
-
-//	@Resource
-//	protected TestRestTemplate restTemplate;
-
 	@Resource
+	private WebApplicationContext webApplicationContext;
 	protected MockMvc mockMvc;
 
-//	protected String prefixUrl() {
-//		return String.format("http://127.0.0.1:%d", port);
-//	}
+
+	@BeforeEach
+	public void setUp() {
+		this.mockMvc = MockMvcBuilders.webAppContextSetup(webApplicationContext).build();
+	}
 
 	@Test
 	void contextLoads() {
 		log.info("Base Test....");
+		Res res = Res.okData("data");
+		log.info("{}", JSON.toJSONString(res));
+		Assertions.assertEquals(res.get("code"), "0");
 	}
 
 }
