@@ -1,5 +1,7 @@
 package com.hotstrip.runapi.domain.model;
 
+import com.hotstrip.runapi.domain.ResEnum;
+
 import java.util.HashMap;
 
 public class Res extends HashMap<String, Object> {
@@ -23,6 +25,11 @@ public class Res extends HashMap<String, Object> {
         return new Res()
                 .add(CODE, CODE_OK).add(MSG, MSG_OK)
                 .add(DATA, data);
+    }
+
+    public static Res error(ResEnum resEnum) {
+        return new Res()
+                .add(CODE, resEnum.getCode()).add(MSG, resEnum.getMsg());
     }
 
     public static Res error(String code, String msg) {

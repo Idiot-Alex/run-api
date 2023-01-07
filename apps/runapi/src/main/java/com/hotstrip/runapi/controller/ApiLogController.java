@@ -2,14 +2,13 @@ package com.hotstrip.runapi.controller;
 
 import com.alibaba.fastjson.JSON;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.hotstrip.runapi.domain.ResEnum;
 import com.hotstrip.runapi.domain.model.ApiLog;
 import com.hotstrip.runapi.domain.model.Res;
 import com.hotstrip.runapi.domain.model.dto.ApiLogDto;
 import com.hotstrip.runapi.domain.service.ApiLogService;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 
@@ -32,5 +31,13 @@ public class ApiLogController {
         Page<ApiLogDto> page = apiLogService.listPage(pageNo, pageSize, info);
         log.info("res: {}", JSON.toJSONString(page));
         return Res.okData(page);
+    }
+
+    @PostMapping(value = "/api-log/del/{id}")
+    public Res del(@PathVariable("id") Long id) {
+        boolean flag = apiLogService.removeById(id);
+        if (!flag)
+            return Res.error(ResEnum.RES_400);
+        return Res.ok();
     }
 }
