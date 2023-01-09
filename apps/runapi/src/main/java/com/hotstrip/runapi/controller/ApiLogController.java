@@ -23,6 +23,13 @@ public class ApiLogController {
     @Resource
     private ApiLogService apiLogService;
 
+    /**
+     * 分页加载 api log
+     * @param pageNo
+     * @param pageSize
+     * @param info
+     * @return
+     */
     @GetMapping(value = "/api-log/list")
     public Res list(@RequestParam(defaultValue = "1") Integer pageNo,
                     @RequestParam(defaultValue = "10") Integer pageSize,
@@ -33,6 +40,11 @@ public class ApiLogController {
         return Res.okData(page);
     }
 
+    /**
+     * 根据 id 删除 api log
+     * @param id
+     * @return
+     */
     @PostMapping(value = "/api-log/del/{id}")
     public Res del(@PathVariable("id") Long id) {
         boolean flag = apiLogService.removeById(id);
