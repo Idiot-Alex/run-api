@@ -25,10 +25,10 @@ public class ApiLogController {
 
     /**
      * 分页加载 api log
-     * @param pageNo
-     * @param pageSize
-     * @param info
-     * @return
+     * @param pageNo pageNo
+     * @param pageSize pageSize
+     * @param info info
+     * @return Res
      */
     @GetMapping(value = "/api-log/list")
     public Res list(@RequestParam(defaultValue = "1") Integer pageNo,
@@ -42,8 +42,8 @@ public class ApiLogController {
 
     /**
      * 根据 id 删除 api log
-     * @param id
-     * @return
+     * @param id id
+     * @return Res
      */
     @PostMapping(value = "/api-log/del/{id}")
     public Res del(@PathVariable("id") Long id) {
