@@ -22,6 +22,9 @@ export default defineConfig({
       include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
     }),
     AutoImport({
+      resolvers: [
+          ElementPlusResolver()
+      ],
       // targets to transform
       include: [
         /\.[tj]sx?$/, // .ts, .tsx, .js, .jsx

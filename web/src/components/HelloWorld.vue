@@ -9,6 +9,7 @@ defineProps({
 
 const count = ref(0)
 const url = ref('https://www.baidu.com')
+ElMessage.success('this is a message')
 
 const run = async () => {
 
